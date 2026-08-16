@@ -1,0 +1,26 @@
+h1{
+    color: white;
+}
+body {
+    background-color: rgb(13, 13, 20);
+}
+.navbar ul{
+    margin: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #141414;
+}
+.lang {
+    /* margin-right: 2em; */
+    padding: 0.4em;
+    border-radius: 100%;
+    border: solid 0.1em;
+    border-color: white;
+    background-color: #17178B;
+}
