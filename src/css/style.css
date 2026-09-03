@@ -1,0 +1,148 @@
+@import url("global.css");
+
+@import url("navbar.css");
+@import url("intro.css");
+@import url("aboutMe.css");
+@import url("myWorks.css");
+@import url("contact.css");
+@import url("footer.css");
+
+:root {
+
+    /*! Font Sizes */
+    --font-X-small: 0.6rem;     /* 9.6px */
+    --font-small: 1rem;       /* 14.4px */
+
+    --font-mid: 1.2rem;         /* 19.2px */
+
+    --font-large: 1.5rem;       /* 24px */
+    --font-X-large: 1.9rem;     /* 30.4px */
+    --font-2X-large: 2.5rem;    /* 40px */
+    --font-3X-large: 3rem;      /* 48px */
+    --font-4X-large: 4rem;      /* 64px */
+    --font-5X-large: 4.4rem;    /* 70.4px */
+
+    --font-weight-large: 700;
+
+    /* ////////////////// */
+
+    /*! Sizes */
+
+    --width-small: 60px;
+    --width-mid: 255px;
+    --width-large: 457px;
+    --width-X-large: 100%;
+
+    --height-small: 75px;
+    --height-mid: 382px;
+    --height-large: 569px;
+    --height-X-large: 100%;
+
+    /* ////////////////// */
+
+    /*! Persentage */
+
+    --persentage-X-small: 10%;
+    --persentage-small: 20%;
+    --persentage-large: 30%;
+    --persentage-X-large: 40%;
+    --persentage-2X-large: 50%;
+    --persentage-3X-large: 60%;
+    --persentage-4X-large: 70%;
+    --persentage-5X-large: 80%;
+    --persentage-6X-large: 90%;
+    --persentage-full: 100%;
+
+    /* ////////////////// */
+
+    /*! Padding , Margin , Gap... */
+
+    --space-No: 0;
+
+    --space-X-small: 0.25rem;   /* 4px */
+    --space-small: 0.5rem;      /* 8px */
+
+    --space-mid: 1rem;          /* 16px */
+
+    --space-large: 1.5rem;      /* 24px */
+    --space-X-large: 2rem;      /* 32px */
+    --space-2X-large: 3rem;     /* 48px */
+    --space-3X-large: 4rem;     /* 64px */
+
+    /* ////////////////// */
+
+    /*! Colors */
+
+    --color-text: #ffffff;
+    --color-logo: aqua;
+    --color-navbar: #141414;
+    --color-background: linear-gradient(
+        to bottom,
+        #161616 13%,
+        #191919 32%,
+        #101021 75%,
+        #07072A 100%
+    );
+    
+    --color-border-blue: #2626C0;
+    --color-border-orange: #C05C26;
+
+    --color-card: #1C1C1C;
+    --color-category: #000000;
+
+    --color-shadow-black: #000000;
+    --color-shadow-lightBlue: #00b3ff;
+    --color-shadow-orange: #AF5A2C;
+    --color-shadow-red: #ff0000;
+    --color-shadow-darkBlue: #17178B;
+
+    /* ////////////////// */
+
+    /*! Border */
+
+    --border-X-small: 1px;
+    --border-small: 2px;
+    --border-mid: 3px;
+    --border-large: 10px;
+
+    /*! Border Radius */
+
+    --radius-small: 0.25rem;
+    --radius-mid: 0.5rem;
+    --radius-large: 1rem;
+    --radius-X-large: 1.5rem;
+    --radius-10XX-large: 22.5rem;
+    --radius-full: var(--persentage-full);
+
+    /* ////////////////// */
+
+    /*! Blur */
+
+    --blur-low: 16px;
+    --blur-mid: 50px;
+    --blur-high: 100px;
+
+    /* ////////////////// */
+
+    /*! Shadows */
+
+    --shadow-low-blur: 0 0 var(--blur-low);
+    --shadow-mid-blur: 0 0 var(--blur-mid);
+    --shadow-high-blur: 0 0 var(--blur-high);
+
+    /* ////////////////// */
+
+    /*! Opacity */
+
+    --opacity-low: 13%;
+    --opacity-mid: 54%;
+    --opacity-high: var(--persentage-5X-large);
+
+    /* ////////////////// */
+
+    /*! Animation */
+
+    --transtion-fast: 0.1s;
+    --transtion-mid: 0.3s;
+    --transtion-slow: 0.8s;
+}

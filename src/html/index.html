@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--! Cinnecting with 'css'-->
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 
     <link rel="icon" type="image/png" href="/assets/icons/logo.png" /> <!-- website logo-->
     <title>REDA Website</title> <!-- website title-->
+
+    <!-- ! Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -44,12 +50,313 @@
     <!--! Main  -->
     <main>
 
+        <!--! Introduction  -->
+
+        <section id="intro">
+            <div class="background"></div>
+
+            <div class="container">
+                <img class="intro-image" src="/assets/images/my image.jpg" alt="my image"/>
+            </div>
+
+            <div class="text">
+                <div class="greating">
+                    Hello, I am
+                </div>
+
+                <h1 class="h1">
+                    <span class="name" data-text="Reda">Reda</span>
+                    <span class="cs" data-text="CS">CS</span>
+                    <span class="student" data-text="Student">Student</span>
+                </h1>
+                
+                <div class="info">
+                    I am interested in technology, 
+                    especially web development, 
+                    and I also enjoy writing novels.
+                </div>
+
+            </div>
+            
+        </section>
+
+        <!-- //////////////////////// -->
+
+        <!--! About Me  -->
+
+        <section id="aboutMe">
+            <h1 class="title" data-text="About Me">About Me</h1>
+            
+            <div class="content">
+                <div class="container">
+                    <img class="aboutMe-image" src="/assets/images/my image.jpg" alt="my image">
+                </div>
+                
+                <p class="p">
+                    <b>My name is Reda</b>
+                    <br><br>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor expedita, 
+                    laborum blanditiis cupiditate architecto, ex dicta, nisi quaerat illum 
+                    rem possimus consequuntur non? Quaerat beatae molestiae quidem ea neque vel.
+                    <br><br>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor expedita, 
+                    laborum blanditiis cupiditate architecto, ex dicta, nisi quaerat illum 
+                    rem possimus consequuntur non? Quaerat beatae molestiae quidem ea neque vel.
+                    <br><br>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor expedita, 
+                    laborum blanditiis cupiditate architecto, ex dicta, nisi quaerat illum 
+                    rem possimus consequuntur non? Quaerat beatae molestiae quidem ea neque vel.
+                </p>
+            </div>
+        </section>
+
+        <!-- //////////////////////// -->
+        
+        <!--! My Works  -->
+
+        <section id="myWorks">
+            <h1 class="title" data-text="My Works">My Works</h1>
+
+            <ul class="works">
+                <li class="unselected" data-text="Software">
+                    <a href="#software">Software</a>
+                </li>
+                <li class="selected" data-text="Novels">
+                    <a href="#novels">Novels</a>
+                </li>
+                <li class="unselected" data-text="Arts">
+                    <a href="#arts">Arts</a>
+                </li>
+            </ul>
+
+            <!-- ! software -->
+            <section id="software" class="unselected">
+                <div class="carousel">
+                    <button class="arrow left" type="button" aria-label="Previous">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+
+                    <ul class="list">
+                        <li id="software-1">
+                            <div class="card unselected">
+                                <div class="image">
+                                    <img src="" alt="">
+                                </div>
+
+                                <h2 data-text="card 1" class="card-name">
+                                    card 1
+                                </h2>
+
+                                <ul class="categories">
+                                    <li class="category">category 1</li>
+                                    <li class="category">category 2</li>
+                                    <li class="category">category 3</li>
+                                    <li class="category">category 4</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <button class="arrow right" type="button" aria-label="Next">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ! novels -->
+            <section id="novels" class="selected">
+
+                <div class="carousel">
+                    <button class="arrow left" type="button" aria-label="Previous">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+
+                    <ul class="list">
+                        <li id="No-Identity">
+                            <div class="card unselected" id="not-yet"
+                                data-destination="" 
+                                data-target="_blank">
+                                
+                                <div class="image">
+                                    <img src="/assets/images/NoIdentity_Cover_EN.png" alt="No Identity image">
+                                </div>
+
+                                <h2 data-text="No Identity" class="card-name">
+                                    No Identity
+                                </h2>
+
+                                <ul class="categories">
+                                    <li class="category">Action</li>
+                                    <li class="category">Psychological</li>
+                                    <li class="category">Mystery</li>
+                                    <li class="category">Drama</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <button class="arrow right" type="button" aria-label="Next">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+                
+
+            </section>
+
+            <!-- ! arts -->
+            <section id="arts" class="unselected">
+                <div class="carousel">
+                    <button class="arrow left" type="button" aria-label="Previous">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+
+                    <ul class="list">
+                        <li id="art-1">
+                            <div class="card unselected" 
+                                data-destination="/assets/images/Arthur vs Agrona.png" 
+                                data-target="_blank">
+                                
+                                <div class="image">
+                                    <img src="/assets/images/Arthur vs Agrona.png" alt="Arthur vs Agrona">
+                                </div>
+
+                                <h2 data-text="Arthur vs Agrona" class="card-name">
+                                    Arthur vs Agrona
+                                </h2>
+
+                                <p class="details">
+                                    <b>2025 / 04 / 10</b>
+                                    <br>
+                                    An art from the web novel "TBATE". This art is a represination 
+                                    of a certain event in the source material.
+                                </p>
+
+                                <ul class="categories">
+                                    <li class="category">Anime</li>
+                                    <li class="category">Digital</li>
+                                    <li class="category">Colorized</li>
+                                    <li class="category">canon</li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        <li id="art-2">
+                            <div class="card unselected" 
+                                data-destination="/assets/images/Agrona vs Arthur and kazess.png" 
+                                data-target="_blank">
+                                
+                                <div class="image">
+                                    <img src="/assets/images/Agrona vs Arthur and kazess.png" alt="Agrona vs Arthur and kazess">
+                                </div>
+
+                                <h2 data-text="Agrona vs Arthur & kazess" class="card-name">
+                                    Agrona vs Arthur & kazess
+                                </h2>
+
+                                <p class="details">
+                                    <b>2025 / 05 / 25</b>
+                                    <br>
+                                    An art from the web novel "TBATE". This art is a represination 
+                                    of a certain event in the source material.
+                                </p>
+
+                                <ul class="categories">
+                                    <li class="category">Anime</li>
+                                    <li class="category">Digital</li>
+                                    <li class="category">Colorized</li>
+                                    <li class="category">canon</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li id="art-3">
+                            <div class="card unselected" 
+                                data-destination="/assets/images/Arthur with his kids.png" 
+                                data-target="_blank">
+                                
+                                <div class="image">
+                                    <img src="/assets/images/Arthur with his kids.png" alt="Arthur with his kids">
+                                </div>
+
+                                <h2 data-text="Arthur with his kids" class="card-name">
+                                    Arthur with his kids
+                                </h2>
+
+                                <p class="details">
+                                    <b>2025 / 08 / 30</b>
+                                    <br>
+                                    An art from the web novel "TBATE". This art is "not" a represination 
+                                    of a certain event in the source material.
+                                </p>
+
+                                <ul class="categories">
+                                    <li class="category">Anime</li>
+                                    <li class="category">Digital</li>
+                                    <li class="category">Colorized</li>
+                                    <li class="category">Orginal</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <button class="arrow right" type="button" aria-label="Next">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </section>
+            
+        </section>
+
+        <!-- //////////////////////// -->
+        
+        <!--! Contact Me  -->
+
+        <section id="contactMe">
+            <h1 class="title" data-text="Contact Me">Contact Me</h1>
+
+            <div class="contact-icons" >
+                <a class="link" target="_blank" href="https://www.linkedin.com/in/reda-alqatifi-a58515414/">
+                    <img class="unselected" src="/assets/icons/Linked In.png" alt="Linked In">
+                </a>
+                <a id="open">
+                    <img id="img" class="unselected" src="/assets/icons/Email.png" alt="Email">
+                </a>
+                <a class="link" target="_blank" href="https://github.com/Reda-Alqatifi">
+                    <img class="unselected"src="/assets/icons/GitHub.png" alt="GitHub">
+                </a>
+            </div>
+
+            <div id="popup" class="popup">
+                <div class="inner-popup">
+                    <h1 data-text="My Email">My Email</h1>
+
+                    <h2>example@examplel.com</h2>
+
+                    <button id="close" class="bt">Close</button>
+                </div>
+            </div>
+            <div id="not-yet-popup" class="popup">
+                <div class="inner-popup">
+                    <h1 data-text="Coming Soon">Coming Soon</h1>
+
+                    <h2>Working in this feature!</h2>
+
+                    <button id="close-not-yet" class="bt">Close</button>
+                </div>
+            </div>
+            
+        </section>
+
     </main>
 
     <!-- ////////////////////////////  -->
 
     <!--! Footer  -->
     <footer>
+
+        <nav id="footbar">
+            <div>Copyrights © 2026 by Reda. All Rights Reserved.</div>
+        </nav>
 
     </footer>
 

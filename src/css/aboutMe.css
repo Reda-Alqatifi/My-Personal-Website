@@ -1,0 +1,31 @@
+
+#aboutMe .content{
+    position: relative;
+    min-height: 500px;
+    
+    display: flex;
+}
+
+#aboutMe .aboutMe-image {
+    width: calc(var(--width-mid) * 1.2);
+    
+    margin-left: calc(var(--space-3X-large) * 1.2);
+    margin-right: calc(var(--space-3X-large) * 1.4);
+
+    border-radius: var(--radius-small);
+    border: var(--border-large) solid;
+    border-color: var(--color-border-blue);
+
+    box-shadow: var(--shadow-high-blur) var(--color-shadow-darkBlue);
+}
+
+#aboutMe .p {
+    margin-right: var(--space-3X-large);
+    /* font-family: "Inter", sans-serif; */
+    font-size: var(--font-mid);
+
+    text-shadow: var(--shadow-low-blur) var(--color-shadow-orange);
+}
+#aboutMe .p b {
+    font-size: calc(var(--font-mid) * 1.2);
+}

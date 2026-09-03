@@ -1,0 +1,117 @@
+/* ! >>>>>>>>>>> Navbar */
+
+.logo {
+    color: var(--color-logo);
+    font-size: var(--font-X-large);
+
+    margin-left: var(--space-mid);
+
+    align-items: center;
+
+    display: flex;
+    letter-spacing: 1%;
+}
+.logo img{
+    width: var(--width-small);
+
+    filter: drop-shadow(var(--shadow-low-blur) var(--color-shadow-red));
+}
+
+.navbar {
+    background-color: var(--color-navbar);
+    font-weight: var(--font-weight-large);
+
+    margin: auto;
+    padding: var(--space-No);
+
+    height: calc(var(--font-3X-large) * 1.1);
+    width: 100%;
+
+    align-items: center;
+
+    border-bottom: calc(var(--border-X-small) * 0.5) solid;
+    border-color: var(--color-border-blue);
+
+    display: flex;
+    box-shadow: var(--shadow-mid-blur) var(--color-shadow-darkBlue);
+
+    position: relative;
+    z-index: 10;
+}
+.navbar ul{
+
+    font-size: var(--font-small);
+
+    margin-right: auto;
+    margin-left: var(--space-large);
+
+    justify-content: left;
+    gap: var(--space-X-large);
+    align-items: center;
+    
+    text-decoration: none;
+    list-style-type: none;
+
+    
+    display: flex;
+    cursor: pointer;
+}
+.navbar ul li a {
+    color: var(--color-text);
+
+    text-decoration: none;
+}
+.navbar ul li a:hover {
+    font-size: var(--font-mid);
+
+    text-shadow: var(--shadow-low-blur) var(--color-shadow-red);
+    transition: var(--transtion-fast);
+}
+
+#lang {
+    background-color: var(--color-shadow-darkBlue);
+    width: var(--font-large);
+    height: var(--font-large);
+
+    margin-right: var(--space-mid);
+    padding: var(--space-X-small);
+
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    
+    
+    border-radius: var(--radius-full);
+    border: var(--border-X-small) solid;
+    border-color: var(--color-text);
+
+    cursor: pointer;
+}
+#lang button {
+    font-size: var(--font-small);
+    color: var(--color-text);
+
+    background: none;
+    border: none;
+
+    padding: var(--space-No);
+    
+    cursor: pointer;
+}
+#lang:hover {
+    background-color: var(--color-border-blue);
+    font-size: var(--font-mid);
+    
+    width: var(--space-large);
+    height: var(--space-large);
+
+    border: calc(var(--border-X-small) * 1.625) solid;
+
+    box-shadow: var(--shadow-low-blur) var(--color-shadow-lightBlue);
+    /* transition: var(--transtion-fast); */
+}
+
+/* home logo */
+.navbar .material-symbols-outlined {
+    vertical-align: middle;
+}

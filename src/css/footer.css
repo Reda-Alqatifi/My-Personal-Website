@@ -1,0 +1,12 @@
+#footbar {
+    background-color: var(--color-shadow-black);
+    font-size: var(--font-mid);
+
+    text-align: center;
+    align-content: center;
+
+    height: calc(var(--font-3X-large) * 1.1); 
+}
+#footbar div {
+    opacity: calc(var(--opacity-mid) * 0.7);
+}

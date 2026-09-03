@@ -1,0 +1,126 @@
+#intro {
+    position: relative;
+    min-height: 500px;
+
+    align-items: center;
+    
+    display: flex;
+}
+#intro .background{
+    position: absolute;
+    inset: 0;
+
+    background-image: url("/assets/images/Coding\ theme\ 1.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 13%;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 100%
+    );
+
+    z-index: 1;
+}
+
+#intro .intro-image {
+    width: calc(var(--width-mid) * 1.2);
+    
+    margin-left: calc(var(--space-3X-large) * 1.2);
+    margin-right: calc(var(--space-3X-large) * 1.4);
+
+    border-radius: var(--radius-10XX-large);
+    border: var(--border-large) solid;
+    border-color: var(--color-border-orange);
+
+    box-shadow: var(--shadow-high-blur) var(--color-shadow-orange);
+}
+
+#intro .greating {
+    font-size: var(--font-large);
+    font-family: "Inter", sans-serif;
+
+    opacity: var(--opacity-mid);
+}
+
+#intro h1 {
+    font-size: var(--font-4X-large);
+
+    margin: var(--space-large);
+}
+
+#intro .name {
+    position: relative;
+    display: block;
+}
+#intro .name::before {
+    content: attr(data-text);
+
+    position: absolute;
+    inset: 0;
+
+    color: var(--color-border-blue);
+
+    -webkit-text-stroke: var(--border-large) var(--color-border-blue);
+    text-shadow: var(--shadow-mid-blur) var(--color-border-blue);
+
+    z-index: -1;
+}
+
+#intro .cs {
+    font-size: var(--font-5X-large);
+
+    position: relative;
+    display: inline-block;
+}
+#intro .cs::before {
+    content: attr(data-text);
+
+    position: absolute;
+    inset: 0;
+
+    color: var(--color-shadow-orange);
+
+    -webkit-text-stroke: var(--border-large) var(--color-border-orange);
+    text-shadow: var(--shadow-mid-blur) var(--color-shadow-red);
+
+    z-index: -1;
+}
+
+#intro .student {
+    margin-left: var(--space-X-large);
+
+    position: relative;
+    display: inline-block;
+}
+#intro .student::before {
+    content: attr(data-text);
+
+    position: absolute;
+    inset: 0;
+
+    color: var(--color-border-blue);
+
+    -webkit-text-stroke: var(--border-large) var(--color-border-blue);
+    text-shadow: var(--shadow-mid-blur) var(--color-border-blue);
+
+    z-index: -1;
+}
+
+#intro .info {
+    font-size: calc(var(--font-large) * 0.9);
+    font-family: "Inter", sans-serif;
+    
+    margin: var(--space-large);
+    margin-right: var(--space-3X-large);
+
+    opacity: var(--opacity-mid);
+}

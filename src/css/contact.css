@@ -1,0 +1,31 @@
+.contact-icons a {
+    text-decoration: none;
+}
+.contact-icons {
+    justify-self: center;
+
+    margin-top: var(--space-3X-large);
+    margin-bottom: var(--space-3X-large);
+}
+.contact-icons img{
+    width: calc(var(--width-small) * 1.5);
+    margin-left: var(--space-2X-large);
+    margin-right: var(--space-2X-large);
+}
+
+.contact-icons img.unselected:hover{
+    width: calc(var(--width-small) * 1.55);
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(2px 0 0 var(--color-border-orange))
+        drop-shadow(-2px 0 0 var(--color-border-orange))
+        drop-shadow(0 2px 0 var(--color-border-orange))
+        drop-shadow(0 -2px 0 var(--color-border-orange))
+        drop-shadow(var(--shadow-mid-blur) var(--color-shadow-orange));
+
+    transition: var(--transtion-fast);
+
+    opacity: 100%;
+}
