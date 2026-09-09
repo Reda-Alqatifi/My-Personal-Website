@@ -2,10 +2,15 @@
 #aboutMe .content{
     position: relative;
     min-height: 500px;
+
+    max-width: 1800px;
     
     display: flex;
 }
 
+#aboutMe .container {
+    align-self: center;
+}
 #aboutMe .aboutMe-image {
     width: calc(var(--width-mid) * 1.2);
     
@@ -17,12 +22,15 @@
     border-color: var(--color-border-blue);
 
     box-shadow: var(--shadow-high-blur) var(--color-shadow-darkBlue);
+
 }
 
 #aboutMe .p {
     margin-right: var(--space-3X-large);
     /* font-family: "Inter", sans-serif; */
     font-size: var(--font-mid);
+
+    align-content: center;
 
     text-shadow: var(--shadow-low-blur) var(--color-shadow-orange);
 }

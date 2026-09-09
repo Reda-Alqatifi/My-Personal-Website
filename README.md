@@ -27,6 +27,7 @@
     * Game:
         - Mobile.
         - Desktop.
+    * Terminal.
 
 - **Novels:**
     * ...

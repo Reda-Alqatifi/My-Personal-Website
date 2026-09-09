@@ -24,6 +24,8 @@
 
     position: relative;
     display: flex;
+
+    pointer-events: none;
 }
 
 #myWorks .works li::before {
@@ -39,8 +41,10 @@
     z-index: -1;
 }
 
-#myWorks ul li a {
+#myWorks .works li a {
     color: var(--color-text);
+
+    pointer-events: auto;
 
     text-decoration: none;
 }
@@ -74,12 +78,16 @@
     text-shadow: var(--shadow-mid-blur) var(--color-border-orange);
 
     transition: var(--transtion-fast);
+
+    cursor: pointer;
 }
 #myWorks .works li.unselected:has(a:hover)::before {
     opacity: var(--persentage-full);
     text-shadow: var(--shadow-mid-blur) var(--color-border-orange);
 
     transition: var(--transtion-fast);
+
+    cursor: pointer;
 }
 
 /* /////////////////////////// */
@@ -107,6 +115,12 @@
     touch-action: pan-y;
     overscroll-behavior-x: contain;
 }
+
+.spoiler .image img{
+    filter: blur(25px);
+}
+
+/* ////////////// */
 
 /* hide the scrollbar */
 .list {

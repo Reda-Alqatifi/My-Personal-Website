@@ -194,19 +194,15 @@ main {
     background-color: var(--color-border-blue);
     border: var(--border-small) solid var(--color-text);
     border-radius: 30px;
-    /* width: 40%; */
     width: 144px;
+
+    margin-left: var(--space-small);
+    margin-left: var(--space-small);
 
     color: white;
     padding: var(--space-small);
 
     cursor: pointer;
-}
-
-#open.bt {
-    width: fit-content;
-    background: none;
-    border: none;
 }
 
 .popup {
@@ -249,11 +245,11 @@ main {
     min-width: fit-content;
     max-width: var(--height-large);
 }
-.inner-popup h1,h2 {
+.inner-popup .Ptitle,.massage {
     margin-top: var(--space-X-large);
     margin-bottom: var(--space-2X-large);
 }
-.inner-popup h1 {
+.inner-popup .Ptitle {
     font-size: var(--font-4X-large);
     position: relative;
     display: block;
@@ -262,7 +258,7 @@ main {
 
     text-align: center;
 }
-.inner-popup h1::before {
+.inner-popup .Ptitle::before {
     content: attr(data-text);
 
     position: absolute;
@@ -280,5 +276,22 @@ main {
 }
 .bt:hover {
     box-shadow: var(--shadow-mid-blur) var(--color-border-blue);
-    background-color: #0595d3;
+    background-color: var(--color-button-hover);
 }
+
+/* /////////////////// */
+
+/* ! Animation */
+
+section {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+ 
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+} 

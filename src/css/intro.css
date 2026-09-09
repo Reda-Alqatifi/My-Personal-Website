@@ -10,12 +10,12 @@
     position: absolute;
     inset: 0;
 
-    background-image: url("/assets/images/Coding\ theme\ 1.webp");
+    background-image: url("/assets/images/Coding theme 1.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    opacity: 13%;
+    opacity: 30%;
 
     mask-image: linear-gradient(
         to bottom,
@@ -28,14 +28,19 @@
         transparent 100%
     );
 
-    z-index: 1;
+    z-index: -1;
 }
+
 
 #intro .intro-image {
     width: calc(var(--width-mid) * 1.2);
+
+    max-width: calc(var(--width-mid) * 1.2);
     
-    margin-left: calc(var(--space-3X-large) * 1.2);
-    margin-right: calc(var(--space-3X-large) * 1.4);
+    margin: calc(var(--space-3X-large) * 1.4) 
+            calc(var(--space-3X-large) * 1.4) 
+            calc(var(--space-3X-large) * 1.4) 
+            calc(var(--space-3X-large) * 1.2);
 
     border-radius: var(--radius-10XX-large);
     border: var(--border-large) solid;

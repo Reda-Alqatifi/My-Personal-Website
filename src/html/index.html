@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 
-    <link rel="icon" type="image/png" href="/assets/icons/logo.png" /> <!-- website logo-->
+    <link rel="icon" type="image/png" href="../../assets/icons/logo.png" /> <!-- website logo-->
     <title>REDA Website</title> <!-- website title-->
 
     <!-- ! Google Fonts -->
@@ -26,7 +26,7 @@
 
         <nav class="navbar">
             <div class="logo">
-                RE<img src="/assets/icons/logo.png" alt="Logo">DA
+                RE<img src="../../assets/icons/logo.png" alt="Logo">DA
             </div>
             <ul>
                 <li><a href="index.html">
@@ -56,7 +56,7 @@
             <div class="background"></div>
 
             <div class="container">
-                <img class="intro-image" src="/assets/images/my image.jpg" alt="my image"/>
+                <img class="intro-image" src="../../assets/images/my image 1.jpg" alt="my image"/>
             </div>
 
             <div class="text">
@@ -89,23 +89,29 @@
             
             <div class="content">
                 <div class="container">
-                    <img class="aboutMe-image" src="/assets/images/my image.jpg" alt="my image">
+                    <img class="aboutMe-image" src="../../assets/images/my image 2 (unified).jpg" alt="my image">
                 </div>
                 
                 <p class="p">
                     <b>My name is Reda</b>
                     <br><br>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor expedita, 
-                    laborum blanditiis cupiditate architecto, ex dicta, nisi quaerat illum 
-                    rem possimus consequuntur non? Quaerat beatae molestiae quidem ea neque vel.
+                    I am a Computer Science student with an interest in technology especially 
+                    web development and software engineering. I enjoy learning how software 
+                    works and building things by myself. Over time, I have learned different 
+                    programming languages and tools, and I am always trying to improve my 
+                    skills through practice and personal projects.
                     <br><br>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor expedita, 
-                    laborum blanditiis cupiditate architecto, ex dicta, nisi quaerat illum 
-                    rem possimus consequuntur non? Quaerat beatae molestiae quidem ea neque vel.
+                    My main interest is Backend Development, but I also enjoy working on the 
+                    frontend and building complete web applications. I like solving problems 
+                    and finding better ways to build my projects. I believe that learning by 
+                    building real projects is one of the best ways to improve my skills.
                     <br><br>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor expedita, 
-                    laborum blanditiis cupiditate architecto, ex dicta, nisi quaerat illum 
-                    rem possimus consequuntur non? Quaerat beatae molestiae quidem ea neque vel.
+                    Programming is not my only interest. I also enjoy writing novels and 
+                    drawing arts. For novels, I like to create stories with mystery, 
+                    psychological, drama, and fantasy elements. For arts, I like to draw 
+                    characters fictional and realistic, hand and digital drawing. In the 
+                    future, I hope to keep improving my programming, writing, and drawing 
+                    skills and continue creating projects that represent my interests.
                 </p>
             </div>
         </section>
@@ -118,40 +124,105 @@
             <h1 class="title" data-text="My Works">My Works</h1>
 
             <ul class="works">
-                <li class="unselected" data-text="Software">
-                    <a href="#software">Software</a>
+                <li id="works-software" class="selected" data-text="Software">
+                    <a>Software</a>
                 </li>
-                <li class="selected" data-text="Novels">
-                    <a href="#novels">Novels</a>
+                <li id="works-novels" class="unselected" data-text="Novels">
+                    <a>Novels</a>
                 </li>
-                <li class="unselected" data-text="Arts">
-                    <a href="#arts">Arts</a>
+                <li id="works-arts" class="unselected" data-text="Arts">
+                    <a>Arts</a>
                 </li>
             </ul>
 
             <!-- ! software -->
-            <section id="software" class="unselected">
+            <section id="software" class="selected">
                 <div class="carousel">
                     <button class="arrow left" type="button" aria-label="Previous">
                         <span class="material-symbols-outlined">chevron_left</span>
                     </button>
 
                     <ul class="list">
-                        <li id="software-1">
-                            <div class="card unselected">
+                        <li id="FOP-project">
+                            <div class="card unselected"
+                                data-destination="https://github.com/Reda-Alqatifi/FOP-project" 
+                                data-target="_blank">
                                 <div class="image">
-                                    <img src="" alt="">
+                                    <img src="../../assets/images/FOP project logo.jpg" alt="Supermarket Products' Management logo">
                                 </div>
 
-                                <h2 data-text="card 1" class="card-name">
-                                    card 1
+                                <h2 data-text="FOP - Project" class="card-name">
+                                    FOP - Project
                                 </h2>
 
                                 <ul class="categories">
-                                    <li class="category">category 1</li>
-                                    <li class="category">category 2</li>
-                                    <li class="category">category 3</li>
-                                    <li class="category">category 4</li>
+                                    <li class="category">University</li>
+                                    <li class="category">Terminal</li>
+                                    <li class="category">Shopping</li>
+                                    <li class="category">Team</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li id="Library Management System">
+                            <div class="card unselected"
+                                data-destination="https://github.com/Reda-Alqatifi/DSA-Project" 
+                                data-target="_blank">
+                                <div class="image">
+                                    <img src="../../assets/images/DSA project logo.jpg" alt="Library Management System logo">
+                                </div>
+
+                                <h2 data-text="DSA - Project" class="card-name">
+                                    DSA - Project
+                                </h2>
+
+                                <ul class="categories">
+                                    <li class="category">University</li>
+                                    <li class="category">Terminal</li>
+                                    <li class="category">Shopping</li>
+                                    <li class="category">Team</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                         <li id="Library and Bookstore Management System (DBCD)">
+                            <div class="card unselected"
+                                data-destination="https://github.com/Reda-Alqatifi/DBCD-Project" 
+                                data-target="_blank">
+                                <div class="image">
+                                    <img src="../../assets/images/DBCD project logo.jpg" alt="Library and Bookstore Management System logo">
+                                </div>
+
+                                <h2 data-text="DBCD - Project" class="card-name">
+                                    DBCD - Project
+                                </h2>
+
+                                <ul class="categories">
+                                    <li class="category">University</li>
+                                    <li class="category">Terminal</li>
+                                    <li class="category">Shopping</li>
+                                    <li class="category">Team</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li id="Library and Bookstore Management System (SWE)">
+                            <div class="card unselected"
+                                data-destination="https://github.com/Reda-Alqatifi/SWE-Project" 
+                                data-target="_blank">
+                                <div class="image">
+                                    <img src="../../assets/images/SWE project logo.jpg" alt="Supermarket Products' Management logo">
+                                </div>
+
+                                <h2 data-text="SWE - Project" class="card-name">
+                                    SWE - Project
+                                </h2>
+
+                                <ul class="categories">
+                                    <li class="category">University</li>
+                                    <li class="category">Terminal</li>
+                                    <li class="category">Shopping</li>
+                                    <li class="category">Team</li>
                                 </ul>
                             </div>
                         </li>
@@ -164,7 +235,7 @@
             </section>
 
             <!-- ! novels -->
-            <section id="novels" class="selected">
+            <section id="novels" class="unselected">
 
                 <div class="carousel">
                     <button class="arrow left" type="button" aria-label="Previous">
@@ -173,12 +244,12 @@
 
                     <ul class="list">
                         <li id="No-Identity">
-                            <div class="card unselected" id="not-yet"
+                            <div class="card unselected not-yet"
                                 data-destination="" 
                                 data-target="_blank">
                                 
                                 <div class="image">
-                                    <img src="/assets/images/NoIdentity_Cover_EN.png" alt="No Identity image">
+                                    <img src="../../assets/images/NoIdentity_Cover_EN.png" alt="No Identity image">
                                 </div>
 
                                 <h2 data-text="No Identity" class="card-name">
@@ -212,12 +283,13 @@
 
                     <ul class="list">
                         <li id="art-1">
-                            <div class="card unselected" 
-                                data-destination="/assets/images/Arthur vs Agrona.png" 
+                            <div class="card unselected spoiler" 
+                                data-media="TBATE" data-type="Web Novel"
+                                data-destination="../../assets/images/Arthur vs Agrona.png" 
                                 data-target="_blank">
                                 
                                 <div class="image">
-                                    <img src="/assets/images/Arthur vs Agrona.png" alt="Arthur vs Agrona">
+                                    <img src="../../assets/images/Arthur vs Agrona (low).jpg" alt="Arthur vs Agrona">
                                 </div>
 
                                 <h2 data-text="Arthur vs Agrona" class="card-name">
@@ -241,12 +313,13 @@
                         </li>
                         
                         <li id="art-2">
-                            <div class="card unselected" 
-                                data-destination="/assets/images/Agrona vs Arthur and kazess.png" 
+                            <div class="card unselected spoiler" 
+                                data-media="TBATE" data-type="Web Novel"
+                                data-destination="../../assets/images/Agrona vs Arthur and kazess.png" 
                                 data-target="_blank">
                                 
                                 <div class="image">
-                                    <img src="/assets/images/Agrona vs Arthur and kazess.png" alt="Agrona vs Arthur and kazess">
+                                    <img src="../../assets/images/Agrona vs Arthur and kazess (low).jpg" alt="Agrona vs Arthur and kazess">
                                 </div>
 
                                 <h2 data-text="Agrona vs Arthur & kazess" class="card-name">
@@ -270,12 +343,13 @@
                         </li>
 
                         <li id="art-3">
-                            <div class="card unselected" 
-                                data-destination="/assets/images/Arthur with his kids.png" 
+                            <div class="card unselected spoiler" 
+                                data-media="TBATE" data-type="Web Novel"
+                                data-destination="../../assets/images/Arthur with his kids.png" 
                                 data-target="_blank">
                                 
                                 <div class="image">
-                                    <img src="/assets/images/Arthur with his kids.png" alt="Arthur with his kids">
+                                    <img src="../../assets/images/Arthur with his kids (low).jpg" alt="Arthur with his kids">
                                 </div>
 
                                 <h2 data-text="Arthur with his kids" class="card-name">
@@ -316,36 +390,25 @@
 
             <div class="contact-icons" >
                 <a class="link" target="_blank" href="https://www.linkedin.com/in/reda-alqatifi-a58515414/">
-                    <img class="unselected" src="/assets/icons/Linked In.png" alt="Linked In">
+                    <img class="unselected" src="../../assets/icons/Linked In.png" alt="Linked In">
                 </a>
-                <a id="open">
-                    <img id="img" class="unselected" src="/assets/icons/Email.png" alt="Email">
+                <a id="email" href="mailto:reda.dev.work37@gmail.com">
+                    <img id="img" class="unselected" src="../../assets/icons/Email.png" alt="Email">
                 </a>
                 <a class="link" target="_blank" href="https://github.com/Reda-Alqatifi">
-                    <img class="unselected"src="/assets/icons/GitHub.png" alt="GitHub">
+                    <img class="unselected"src="../../assets/icons/GitHub.png" alt="GitHub">
                 </a>
-            </div>
-
-            <div id="popup" class="popup">
-                <div class="inner-popup">
-                    <h1 data-text="My Email">My Email</h1>
-
-                    <h2>example@examplel.com</h2>
-
-                    <button id="close" class="bt">Close</button>
-                </div>
-            </div>
-            <div id="not-yet-popup" class="popup">
-                <div class="inner-popup">
-                    <h1 data-text="Coming Soon">Coming Soon</h1>
-
-                    <h2>Working in this feature!</h2>
-
-                    <button id="close-not-yet" class="bt">Close</button>
-                </div>
             </div>
             
         </section>
+
+        <!-- //////////////////////// -->
+        
+        <!-- ! popup -->
+
+        <div id="popup" class="popup">
+            <div id="inner-popup" class="inner-popup"></div>
+        </div>
 
     </main>
 

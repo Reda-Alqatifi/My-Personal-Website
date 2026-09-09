@@ -17,24 +17,99 @@ langButton.addEventListener("click", function() {
 
 // ////////////////////////////////////////
 
+// ! pop-up window
+
+const popup = document.getElementById("popup");
+const inner_popup = document.getElementById("inner-popup");
+
+function popup_HTML(title , massage , button_1 , button_2 , question) {
+
+    // ! very important to start the 1st innerHTML with '=' to not be dublicated.
+    inner_popup.innerHTML = `<h1 class="Ptitle" data-text="${title}">${title}</h1>`;
+    inner_popup.innerHTML += `<h2 class="massage">${massage}</h2>`;
+    if (question)
+        inner_popup.innerHTML += `<p class="massage">${question}</p>`;
+    inner_popup.innerHTML += `<button id="close" class="bt">${button_1}</button>`;
+    if (button_2)
+        inner_popup.innerHTML += `<button id="agreement" class="bt">${button_2}</button>`;
+
+    popup.classList.add("open");
+}
+
+function waitingForAgreement(destination) {
+    return new Promise(resolve => {
+        document.addEventListener("click" , event => {
+            const agreement = event.target.closest("#agreement");
+
+            if (!agreement) {
+                destination.des = " ";
+                return;
+            }
+
+            document.removeEventListener("click" , this);
+
+            resolve();
+        });
+    });
+}
+
 //! div to open the link, same job as <a></a>
 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", async function (event) {
     const card = event.target.closest(".card");
+    const spoiler = event.target.closest(".spoiler");
 
     if (!card) 
         return;
 
-    const destination = card.dataset.destination;
+    let destination = {des : card.dataset.destination}; // I made it as an object to pass it by ref
     const target = card.dataset.target;
-
-    if (destination.trim() === "")
-        return;
     
+    if (spoiler) {
+        let media_title = spoiler.dataset.media;
+        let media_type = spoiler.dataset.type;
+
+        let title = "Spoiler Warning!";
+        let massage = `This image contains spoiler from "${media_title}" ${media_type}.`;
+        let question = "Are you sure you want to see it?"
+        let btTitle = "No";
+        let btTitle2 = "yes";
+
+        popup_HTML(title , massage , btTitle , btTitle2 , question);
+
+        await waitingForAgreement(destination);
+
+        popup.classList.remove("open");
+    }
+
+    if (destination.des.trim() === "")
+        return;
+
     if (target === "_blank") {
-        window.open(destination, "_blank");
+        window.open(destination.des, "_blank");
     } else {
-        window.location.href = destination;
+        window.location.href = destination.des;
+    }
+});
+
+document.addEventListener("click" , event => {
+    const isNotYet = event.target.closest(".not-yet");
+
+    if (!isNotYet)
+        return;
+
+    let title , massage , btTitle = "";
+
+    title = "Coming Soon";
+    massage = "Working in this feature!";
+    btTitle = "Close";
+
+    popup_HTML(title , massage , btTitle);
+});
+
+document.addEventListener("click" , event => {
+    if (event.target.closest("#close")) {
+        popup.classList.remove("open");
     }
 });
 
@@ -283,25 +358,74 @@ document.querySelectorAll(".carousel").forEach(carousel);
 
 // //////////////////////////////
 
-// ! email window
+// ! for chosing the type of works (software , novels , arts)
 
-const popup = document.getElementById("popup");
-const not_yet_popup = document.getElementById("not-yet-popup");
-const open_popup = document.getElementById("open");
-const not_yet = document.getElementById("not-yet");
-const close_popup = document.getElementById("close");
-const close_not_yet = document.getElementById("close-not-yet");
+const works_software = document.getElementById("works-software");
+const works_novels = document.getElementById("works-novels");
+const works_arts = document.getElementById("works-arts");
 
-not_yet.addEventListener("click" , () => {
-    not_yet_popup.classList.add("open");
-});
-close_not_yet.addEventListener("click" , event => {
-    not_yet_popup.classList.remove("open");
-});
+const software = document.getElementById("software");
+const novels = document.getElementById("novels");
+const arts = document.getElementById("arts");
 
-open_popup.addEventListener("click" , () => {
-    popup.classList.add("open");
-})
-close_popup.addEventListener("click" , event => {
-    popup.classList.remove("open");
-});
+document.addEventListener("click" , event => {
+    if (event.target.closest("#works-software a")) {
+        if ( works_software.classList.contains("unselected")) {
+            works_software.classList.replace("unselected" , "selected");
+
+            works_novels.classList.replace("selected" , "unselected");
+            works_arts.classList.replace("selected" , "unselected");
+
+            novels.classList.replace("selected" , "unselected");
+            arts.classList.replace("selected" , "unselected");
+
+            software.classList.replace("unselected" , "selected");
+        }
+    }
+    else if (event.target.closest("#works-novels a")) {
+        if ( works_novels.classList.contains("unselected")) {
+            works_novels.classList.replace("unselected" , "selected");
+
+            works_software.classList.replace("selected" , "unselected");
+            works_arts.classList.replace("selected" , "unselected");
+
+            software.classList.replace("selected" , "unselected");
+            arts.classList.replace("selected" , "unselected");
+
+            novels.classList.replace("unselected" , "selected");
+        }
+    }
+    else if (event.target.closest("#works-arts a")) {
+        if ( works_arts.classList.contains("unselected")) {
+            works_arts.classList.replace("unselected" , "selected");
+
+            works_novels.classList.replace("selected" , "unselected");
+            works_software.classList.replace("selected" , "unselected");
+
+            novels.classList.replace("selected" , "unselected");
+            software.classList.replace("selected" , "unselected");
+
+            arts.classList.replace("unselected" , "selected");
+        }
+    }
+}); 
+
+
+// ///////////////
+
+// ! Animation 
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting)
+            entry.target.classList.add("show");
+
+    });
+
+}, { threshold: 0.2 });
+
+sections.forEach(section => {
+    observer.observe(section);
+}); 
