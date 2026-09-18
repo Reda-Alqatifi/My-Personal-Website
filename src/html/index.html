@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark"> <!--! for the colors not be changed by the auto dark-mode-->
 
     <!--! Cinnecting with 'css'-->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100..700&display=swap"/>
 
     <link rel="icon" type="image/png" href="../../assets/icons/logo.png" /> <!-- website logo-->
     <title>REDA Website</title> <!-- website title-->
@@ -25,17 +27,17 @@
     <header>
 
         <nav class="navbar">
-            <div class="logo">
+            <div class="logo" dir="ltr">
                 RE<img src="../../assets/icons/logo.png" alt="Logo">DA
             </div>
             <ul>
                 <li><a href="index.html">
                     <span class="material-symbols-outlined">home</span>
-                    Home
+                    <span data-i18n="nav.home">Home</span>
                 </a></li>
-                <li><a href="#aboutMe">About Me</a></li>
-                <li><a href="#myWorks">My Works</a></li>
-                <li><a href="#contactMe">Cantact Me</a></li>
+                <li><a href="#aboutMe" data-i18n="nav.about">About Me</a></li>
+                <li><a href="#myWorks" data-i18n="nav.works">My Works</a></li>
+                <li><a href="#contactMe" data-i18n="nav.contact">Cantact Me</a></li>
             </ul>
 
             <div id="lang">
@@ -60,17 +62,20 @@
             </div>
 
             <div class="text">
-                <div class="greating">
+                <div class="greating" data-i18n="intro.greeting">
                     Hello, I am
                 </div>
 
                 <h1 class="h1">
-                    <span class="name" data-text="Reda">Reda</span>
-                    <span class="cs" data-text="CS">CS</span>
-                    <span class="student" data-text="Student">Student</span>
+                    <span class="name" data-text="Reda" data-i18n="intro.name">Reda</span>
+                    <span class="role">
+                        <span class="cs" data-text="CS" data-i18n="intro.cs">CS</span>
+                        <span class="student" data-text="Student" data-i18n="intro.student">Student</span>
+                    </span>
+                    
                 </h1>
                 
-                <div class="info">
+                <div class="info" data-i18n="intro.info">
                     I am interested in technology, 
                     especially web development, 
                     and I also enjoy writing novels.
@@ -85,7 +90,7 @@
         <!--! About Me  -->
 
         <section id="aboutMe">
-            <h1 class="title" data-text="About Me">About Me</h1>
+            <h1 class="title" data-text="About Me" data-i18n="about.title">About Me</h1>
             
             <div class="content">
                 <div class="container">
@@ -93,25 +98,38 @@
                 </div>
                 
                 <p class="p">
-                    <b>My name is Reda</b>
+                    <b data-i18n="about.name">My name is Reda</b>
+
                     <br><br>
+
+                    <!-- span is just for translations-->
+                    <span data-i18n="about.p1">
                     I am a Computer Science student with an interest in technology especially 
                     web development and software engineering. I enjoy learning how software 
                     works and building things by myself. Over time, I have learned different 
                     programming languages and tools, and I am always trying to improve my 
                     skills through practice and personal projects.
+                    </span>
+
                     <br><br>
+
+                    <span data-i18n="about.p2">
                     My main interest is Backend Development, but I also enjoy working on the 
                     frontend and building complete web applications. I like solving problems 
                     and finding better ways to build my projects. I believe that learning by 
                     building real projects is one of the best ways to improve my skills.
+                    </span>
+
                     <br><br>
+
+                    <span data-i18n="about.p3">
                     Programming is not my only interest. I also enjoy writing novels and 
                     drawing arts. For novels, I like to create stories with mystery, 
                     psychological, drama, and fantasy elements. For arts, I like to draw 
                     characters fictional and realistic, hand and digital drawing. In the 
                     future, I hope to keep improving my programming, writing, and drawing 
                     skills and continue creating projects that represent my interests.
+                    </span>
                 </p>
             </div>
         </section>
@@ -121,24 +139,24 @@
         <!--! My Works  -->
 
         <section id="myWorks">
-            <h1 class="title" data-text="My Works">My Works</h1>
+            <h1 class="title" data-text="My Works" data-i18n="works.title">My Works</h1>
 
             <ul class="works">
-                <li id="works-software" class="selected" data-text="Software">
-                    <a>Software</a>
+                <li id="works-software" class="selected"  data-text="Software">
+                    <a data-i18n="works.software">Software</a>
                 </li>
                 <li id="works-novels" class="unselected" data-text="Novels">
-                    <a>Novels</a>
+                    <a data-i18n="works.novels">Novels</a>
                 </li>
-                <li id="works-arts" class="unselected" data-text="Arts">
-                    <a>Arts</a>
+                <li id="works-arts" class="unselected" data-text="Arts" >
+                    <a data-i18n="works.arts">Arts</a>
                 </li>
             </ul>
 
             <!-- ! software -->
             <section id="software" class="selected">
                 <div class="carousel">
-                    <button class="arrow left" type="button" aria-label="Previous">
+                    <button class="arrow prev" type="button" aria-label="Previous" data-i18n="carousel.prev" data-i18n-attr="aria-label">
                         <span class="material-symbols-outlined">chevron_left</span>
                     </button>
 
@@ -151,15 +169,15 @@
                                     <img src="../../assets/images/FOP project logo.jpg" alt="Supermarket Products' Management logo">
                                 </div>
 
-                                <h2 data-text="FOP - Project" class="card-name">
+                                <h2 data-text="FOP - Project" class="card-name" data-i18n="card.fop">
                                     FOP - Project
                                 </h2>
 
                                 <ul class="categories">
-                                    <li class="category">University</li>
-                                    <li class="category">Terminal</li>
-                                    <li class="category">Shopping</li>
-                                    <li class="category">Team</li>
+                                    <li class="category" data-i18n="category.university">University</li>
+                                    <li class="category" data-i18n="category.terminal">Terminal</li>
+                                    <li class="category" data-i18n="category.shopping">Shopping</li>
+                                    <li class="category" data-i18n="category.team">Team</li>
                                 </ul>
                             </div>
                         </li>
@@ -172,15 +190,15 @@
                                     <img src="../../assets/images/DSA project logo.jpg" alt="Library Management System logo">
                                 </div>
 
-                                <h2 data-text="DSA - Project" class="card-name">
+                                <h2 data-text="DSA - Project" class="card-name" data-i18n="card.dsa">
                                     DSA - Project
                                 </h2>
 
                                 <ul class="categories">
-                                    <li class="category">University</li>
-                                    <li class="category">Terminal</li>
-                                    <li class="category">Shopping</li>
-                                    <li class="category">Team</li>
+                                    <li class="category" data-i18n="category.university">University</li>
+                                    <li class="category" data-i18n="category.terminal">Terminal</li>
+                                    <li class="category" data-i18n="category.shopping">Shopping</li>
+                                    <li class="category" data-i18n="category.team">Team</li>
                                 </ul>
                             </div>
                         </li>
@@ -193,15 +211,15 @@
                                     <img src="../../assets/images/DBCD project logo.jpg" alt="Library and Bookstore Management System logo">
                                 </div>
 
-                                <h2 data-text="DBCD - Project" class="card-name">
+                                <h2 data-text="DBCD - Project" class="card-name" data-i18n="card.dbcd">
                                     DBCD - Project
                                 </h2>
 
                                 <ul class="categories">
-                                    <li class="category">University</li>
-                                    <li class="category">Terminal</li>
-                                    <li class="category">Shopping</li>
-                                    <li class="category">Team</li>
+                                    <li class="category" data-i18n="category.university">University</li>
+                                    <li class="category" data-i18n="category.terminal">Terminal</li>
+                                    <li class="category" data-i18n="category.shopping">Shopping</li>
+                                    <li class="category" data-i18n="category.team">Team</li>
                                 </ul>
                             </div>
                         </li>
@@ -214,21 +232,21 @@
                                     <img src="../../assets/images/SWE project logo.jpg" alt="Supermarket Products' Management logo">
                                 </div>
 
-                                <h2 data-text="SWE - Project" class="card-name">
+                                <h2 data-text="SWE - Project" class="card-name" data-i18n="card.swe">
                                     SWE - Project
                                 </h2>
 
                                 <ul class="categories">
-                                    <li class="category">University</li>
-                                    <li class="category">Terminal</li>
-                                    <li class="category">Shopping</li>
-                                    <li class="category">Team</li>
+                                    <li class="category" data-i18n="category.university">University</li>
+                                    <li class="category" data-i18n="category.terminal">Terminal</li>
+                                    <li class="category" data-i18n="category.shopping">Shopping</li>
+                                    <li class="category" data-i18n="category.team">Team</li>
                                 </ul>
                             </div>
                         </li>
                     </ul>
 
-                    <button class="arrow right" type="button" aria-label="Next">
+                    <button class="arrow next" type="button" aria-label="Next" data-i18n="carousel.next" data-i18n-attr="aria-label">
                         <span class="material-symbols-outlined">chevron_right</span>
                     </button>
                 </div>
@@ -238,7 +256,7 @@
             <section id="novels" class="unselected">
 
                 <div class="carousel">
-                    <button class="arrow left" type="button" aria-label="Previous">
+                    <button class="arrow prev" type="button" aria-label="Previous" data-i18n="carousel.prev" data-i18n-attr="aria-label">
                         <span class="material-symbols-outlined">chevron_left</span>
                     </button>
 
@@ -252,21 +270,21 @@
                                     <img src="../../assets/images/NoIdentity_Cover_EN.png" alt="No Identity image">
                                 </div>
 
-                                <h2 data-text="No Identity" class="card-name">
+                                <h2 data-text="No Identity" class="card-name" data-i18n="card.NoIdentity">
                                     No Identity
                                 </h2>
 
                                 <ul class="categories">
-                                    <li class="category">Action</li>
-                                    <li class="category">Psychological</li>
-                                    <li class="category">Mystery</li>
-                                    <li class="category">Drama</li>
+                                    <li class="category" data-i18n="category.action">Action</li>
+                                    <li class="category" data-i18n="category.psychological">Psychological</li>
+                                    <li class="category" data-i18n="category.mystery">Mystery</li>
+                                    <li class="category" data-i18n="category.drama">Drama</li>
                                 </ul>
                             </div>
                         </li>
                     </ul>
 
-                    <button class="arrow right" type="button" aria-label="Next">
+                    <button class="arrow next" type="button" aria-label="Next" data-i18n="carousel.next" data-i18n-attr="aria-label">
                         <span class="material-symbols-outlined">chevron_right</span>
                     </button>
                 </div>
@@ -277,14 +295,14 @@
             <!-- ! arts -->
             <section id="arts" class="unselected">
                 <div class="carousel">
-                    <button class="arrow left" type="button" aria-label="Previous">
+                    <button class="arrow prev" type="button" aria-label="Previous" data-i18n="carousel.prev" data-i18n-attr="aria-label">
                         <span class="material-symbols-outlined">chevron_left</span>
                     </button>
 
                     <ul class="list">
                         <li id="art-1">
                             <div class="card unselected spoiler" 
-                                data-media="TBATE" data-type="Web Novel"
+                                data-media="TBATE" data-type="Web Novel" 
                                 data-destination="../../assets/images/Arthur vs Agrona.png" 
                                 data-target="_blank">
                                 
@@ -292,22 +310,24 @@
                                     <img src="../../assets/images/Arthur vs Agrona (low).jpg" alt="Arthur vs Agrona">
                                 </div>
 
-                                <h2 data-text="Arthur vs Agrona" class="card-name">
+                                <h2 data-text="Arthur vs Agrona" class="card-name" data-i18n="card.art1">
                                     Arthur vs Agrona
                                 </h2>
 
                                 <p class="details">
-                                    <b>2025 / 04 / 10</b>
+                                    <b dir="ltr">2025 / 04 / 10</b>
                                     <br>
-                                    An art from the web novel "TBATE". This art is a represination 
-                                    of a certain event in the source material.
+                                    <span data-i18n="art1.desc">
+                                        An art from the web novel "TBATE". This art is a represination 
+                                        of a certain event in the source material.
+                                    </span>
                                 </p>
 
                                 <ul class="categories">
-                                    <li class="category">Anime</li>
-                                    <li class="category">Digital</li>
-                                    <li class="category">Colorized</li>
-                                    <li class="category">canon</li>
+                                    <li class="category" data-i18n="category.anime">Anime</li>
+                                    <li class="category" data-i18n="category.digital">Digital</li>
+                                    <li class="category" data-i18n="category.colorized">Colorized</li>
+                                    <li class="category" data-i18n="category.canon">Canon</li>
                                 </ul>
                             </div>
                         </li>
@@ -322,22 +342,24 @@
                                     <img src="../../assets/images/Agrona vs Arthur and kazess (low).jpg" alt="Agrona vs Arthur and kazess">
                                 </div>
 
-                                <h2 data-text="Agrona vs Arthur & kazess" class="card-name">
+                                <h2 data-text="Agrona vs Arthur & kazess" class="card-name" data-i18n="card.art2">
                                     Agrona vs Arthur & kazess
                                 </h2>
 
                                 <p class="details">
-                                    <b>2025 / 05 / 25</b>
+                                    <b dir="ltr">2025 / 05 / 25</b>
                                     <br>
-                                    An art from the web novel "TBATE". This art is a represination 
-                                    of a certain event in the source material.
+                                    <span data-i18n="art2.desc">
+                                        An art from the web novel "TBATE". This art is a represination 
+                                        of a certain event in the source material.
+                                    </span>
                                 </p>
 
                                 <ul class="categories">
-                                    <li class="category">Anime</li>
-                                    <li class="category">Digital</li>
-                                    <li class="category">Colorized</li>
-                                    <li class="category">canon</li>
+                                    <li class="category" data-i18n="category.anime">Anime</li>
+                                    <li class="category" data-i18n="category.digital">Digital</li>
+                                    <li class="category" data-i18n="category.colorized">Colorized</li>
+                                    <li class="category" data-i18n="category.canon">Canon</li>
                                 </ul>
                             </div>
                         </li>
@@ -352,28 +374,30 @@
                                     <img src="../../assets/images/Arthur with his kids (low).jpg" alt="Arthur with his kids">
                                 </div>
 
-                                <h2 data-text="Arthur with his kids" class="card-name">
+                                <h2 data-text="Arthur with his kids" class="card-name" data-i18n="card.art3">
                                     Arthur with his kids
                                 </h2>
 
                                 <p class="details">
-                                    <b>2025 / 08 / 30</b>
+                                    <b dir="ltr">2025 / 08 / 30</b>
                                     <br>
-                                    An art from the web novel "TBATE". This art is "not" a represination 
-                                    of a certain event in the source material.
+                                    <span data-i18n="art3.desc">
+                                        An art from the web novel "TBATE". This art is "not" a represination 
+                                        of a certain event in the source material.
+                                    </span>
                                 </p>
 
                                 <ul class="categories">
-                                    <li class="category">Anime</li>
-                                    <li class="category">Digital</li>
-                                    <li class="category">Colorized</li>
-                                    <li class="category">Orginal</li>
+                                    <li class="category" data-i18n="category.anime">Anime</li>
+                                    <li class="category" data-i18n="category.digital">Digital</li>
+                                    <li class="category" data-i18n="category.colorized">Colorized</li>
+                                    <li class="category" data-i18n="category.orginal">Orginal</li>
                                 </ul>
                             </div>
                         </li>
                     </ul>
 
-                    <button class="arrow right" type="button" aria-label="Next">
+                    <button class="arrow next" type="button" aria-label="Next" data-i18n="carousel.next" data-i18n-attr="aria-label">
                         <span class="material-symbols-outlined">chevron_right</span>
                     </button>
                 </div>
@@ -386,7 +410,7 @@
         <!--! Contact Me  -->
 
         <section id="contactMe">
-            <h1 class="title" data-text="Contact Me">Contact Me</h1>
+            <h1 class="title" data-text="Contact Me" data-i18n="contact.title">Contact Me</h1>
 
             <div class="contact-icons" >
                 <a class="link" target="_blank" href="https://www.linkedin.com/in/reda-alqatifi-a58515414/">
@@ -418,7 +442,7 @@
     <footer>
 
         <nav id="footbar">
-            <div>Copyrights © 2026 by Reda. All Rights Reserved.</div>
+            <div data-i18n="footer.rights">Copyrights © 2026 by Reda. All Rights Reserved.</div>
         </nav>
 
     </footer>
@@ -426,7 +450,7 @@
     <!-- ////////////////////////////  -->
 
     <!--! Cinnecting with 'js'-->
-    <script src="../js/main.js"></script>
+    <script type="module" src="../js/main.js"></script>
 </body>
 
 </html> <!--! End of html-->

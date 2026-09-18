@@ -51,7 +51,7 @@
 
 #intro .greating {
     font-size: var(--font-large);
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-body);
 
     opacity: var(--opacity-mid);
 }
@@ -82,6 +82,7 @@
 
 #intro .cs {
     font-size: var(--font-5X-large);
+    margin-inline-start: var(--space-X-large);
 
     position: relative;
     display: inline-block;
@@ -120,12 +121,25 @@
     z-index: -1;
 }
 
+html[dir="rtl"] #intro .role {
+    display: inline-flex;
+    flex-direction: row-reverse;   /* student first (rightmost) in RTL */
+    align-items: baseline;
+}
+html[dir="rtl"] #intro .student {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+html[dir="rtl"] #intro .cs {
+    margin-inline-end: var(--space-X-large); 
+}
+
 #intro .info {
     font-size: calc(var(--font-large) * 0.9);
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-body);
     
     margin: var(--space-large);
-    margin-right: var(--space-3X-large);
+    margin-inline-end: var(--space-3X-large);
 
     opacity: var(--opacity-mid);
 }

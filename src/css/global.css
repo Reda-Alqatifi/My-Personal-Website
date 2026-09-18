@@ -133,7 +133,7 @@ main {
 
 .card .categories {
     font-size: calc(var(--font-X-small) * 0.8);
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-body);
 
     display: flex;
     gap: var(--space-X-small);
@@ -155,7 +155,7 @@ main {
 
 .card .details {
     font-size: calc(var(--font-small) * 0.8);
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-body);
 
     max-width: var(--width-large);
 
@@ -196,8 +196,8 @@ main {
     border-radius: 30px;
     width: 144px;
 
-    margin-left: var(--space-small);
-    margin-left: var(--space-small);
+    margin-inline-start: var(--space-small);
+    margin-inline-end: var(--space-small);
 
     color: white;
     padding: var(--space-small);
@@ -213,9 +213,9 @@ main {
     opacity: 0%;
 
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     bottom: 0;
-    right: 0;
+    inset-inline-end: 0;
 
     z-index: -1;
 
@@ -245,7 +245,7 @@ main {
     min-width: fit-content;
     max-width: var(--height-large);
 }
-.inner-popup .Ptitle,.massage {
+.inner-popup .Ptitle,.message {
     margin-top: var(--space-X-large);
     margin-bottom: var(--space-2X-large);
 }
@@ -294,4 +294,17 @@ section {
 section.show {
     opacity: 1;
     transform: translateY(0);
+} 
+
+/* ////////////// */
+
+/* ! Arabic Language */
+
+:root[lang="ar"] *:not(.material-symbols-outlined):not(.logo) {
+    font-family: "IBM Plex Sans Arabic", sans-serif !important;
+    letter-spacing: normal !important;
+}
+
+p{
+    font-family: "IBM Plex Sans Arabic", sans-serif;
 } 

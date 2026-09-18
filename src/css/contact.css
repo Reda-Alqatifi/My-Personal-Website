@@ -9,8 +9,8 @@
 }
 .contact-icons img{
     width: calc(var(--width-small) * 1.5);
-    margin-left: var(--space-2X-large);
-    margin-right: var(--space-2X-large);
+    margin-inline-start: var(--space-2X-large);
+    margin-inline-end: var(--space-2X-large);
 }
 
 .contact-icons img.unselected:hover{
