@@ -2,6 +2,7 @@ import { dictionary } from "./dictionary.js";
 
 const DEFAULT = "en";
 let current = DEFAULT;
+let langAnimTimer = null;
 
 // translate one key, with optional {placeholders}
 function translate(key, vars = {}) {
@@ -22,7 +23,7 @@ function translate(key, vars = {}) {
     return s;
 }
 
-function applyLanguage(lang) {
+function applyLanguage(lang , animate = true) {
     current = dictionary[lang] ? lang : DEFAULT;
 
     // 1. direction + language on the root element
@@ -54,7 +55,21 @@ function applyLanguage(lang) {
     // 5. remember the choice
     try { localStorage.setItem("lang", current); } catch {}
 
-    // 6. let other modules react (carousel re-measure, etc.)
+    // 6. the switch animation (left>>>right for arabic , right>>>left for english)
+    if (animate) {
+        const root = document.documentElement;
+
+        root.classList.remove("lang-switch-ar" , "lang-switch-en");
+        void root.offsetWidth;   // force a reflow so the animation restarts
+        root.classList.add("lang-switch-" + current);
+
+        clearTimeout(langAnimTimer);
+        langAnimTimer = setTimeout(() => {
+            root.classList.remove("lang-switch-ar" , "lang-switch-en");
+        } , 700);
+    }
+
+    // 7. let other modules react (carousel re-measure, etc.)
     window.dispatchEvent(new CustomEvent("languagechange", { detail: current }));
 }
 
@@ -63,7 +78,7 @@ function initLanguage() {
     const fromUrl   = new URLSearchParams(location.search).get("lang");
     const fromStore = (() => { try { return localStorage.getItem("lang"); } catch { return null; } })();
     const fromNav   = navigator.language?.startsWith("ar") ? "ar" : null;
-    applyLanguage(fromUrl || fromStore || fromNav || DEFAULT);
+    applyLanguage(fromUrl || fromStore || fromNav || DEFAULT , false);
 }
 
 function currentLanguage() { return current; }
