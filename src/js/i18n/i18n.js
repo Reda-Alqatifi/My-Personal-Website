@@ -50,7 +50,7 @@ function applyLanguage(lang , animate = true) {
 
     // 4. page title + the toggle button label
     const btn = document.getElementById("langButton");
-    if (btn) btn.textContent = (current === "ar") ? "EN" : "ع";
+    if (btn) btn.textContent = (current === "ar") ? "EN" : "Ar";
 
     // 5. remember the choice
     try { localStorage.setItem("lang", current); } catch {}

@@ -107,7 +107,7 @@ export const dictionary = {
         "nav.works"     : "أعمالي",
         "nav.contact"   : "تواصل معي",
 
-        "intro.greeting" : "مرحباً، أنا",
+        "intro.greeting" : "السلام عليكم، أنا",
         "intro.name"    : "رضــــــا",
         "intro.cs"      : " علـــــوم حاسب",
         "intro.student" : "طالب ",
@@ -184,7 +184,7 @@ export const dictionary = {
         "category.canon"        : "من المصدر",
         "category.orginal"      : "أصلية",
 
-        "contact.title" : "تواصل معي",
+        "contact.title" : "تواصــــل معي",
 
         "footer.rights" : "الحقوق © 2026 بواسطة رضــا. جميع الحقوق محفوظة.",
 

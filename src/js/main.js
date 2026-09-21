@@ -17,7 +17,7 @@ cardsToAnchor();
 // ! to close the pop-up after pressing "Close"
 popup_close();
 
-// ! for cards infinte scrolling
+// ! for cards scrolling and infinte animation
 carousel(); 
 
 // ! for chosing the type of works (software , novels , arts)

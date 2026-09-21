@@ -113,6 +113,7 @@
     cursor: grab;
 
     touch-action: pan-y;
+    /* touch-action: pan-x pan-y; */
     overscroll-behavior-x: contain;
 }
 
@@ -127,7 +128,7 @@
     scrollbar-width: none; /* for firfox */
     -ms-overflow-style: none; /* for edje */
 }
-.list ::-webkit-scrollbar {
+.list::-webkit-scrollbar {
     display: none; /* for chrome / safari */
 }
 
