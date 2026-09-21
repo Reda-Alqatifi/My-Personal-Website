@@ -1,8 +1,6 @@
 <div align="center">
 
-<span style="font-family:Times New Roman; color:aqua; font-size:2.9rem; letter-spacing: 1%; align-items: center; display: flex; justify-content:center;">
-    RE<img src="assets/icons/logo.png" alt="Logo" width="90" style="filter: drop-shadow(0 0 16px #ff0000);">DA
-</span>
+<img src="assets/icons/logo.svg" alt="logo" width="360" />
 
 # Reda Alqatifi — Personal Website
 
