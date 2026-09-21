@@ -20,6 +20,7 @@ function infinteAnimation(root , carousel) {
 
     let mouseInside = false;        // the mouse is somewhere on the carousel
     let mouseX = 0 , mouseY = 0;    // its last position
+    let touching = false;           // a finger is on the carousel
 
     //! >>>>>>>>>>>>>>  [ 1 ]   When it may move  :
 
@@ -43,6 +44,9 @@ function infinteAnimation(root , carousel) {
             return false;
 
         if (onCard() || carousel.isBusy()) // the mouse is on a card, or an arrow / drag is running
+            return false;
+        
+        if (touching)                      // a finger is holding the cards
             return false;
 
         if (RESPECT_REDUCED_MOTION && reduced.matches)
@@ -109,10 +113,17 @@ function infinteAnimation(root , carousel) {
     });
 
     root.addEventListener("touchstart" , () => {
+        touching = true;
         pauseFor(performance.now());
     } , { passive : true });
 
     root.addEventListener("touchend" , () => {
+        touching = false;
+        pauseFor(performance.now());
+    } , { passive : true });
+
+    root.addEventListener("touchcancel" , () => {
+        touching = false;
         pauseFor(performance.now());
     } , { passive : true });
 
