@@ -1,0 +1,320 @@
+/* ! >>>>>>>>>>> Responsive */
+
+/*
+    Part 1 : clamp() values (no media query).
+    each clamp's max = the original desktop value,
+    so big screens look the same and small screens shrink smoothly.
+
+    Part 2 : media queries for layout changes (stacking, wrapping...).
+*/
+
+/* ////////////////////////////////////// */
+
+/* ! Part 1 : clamp() */
+
+/* titles (About Me, My Works, Contact Me) */
+.title {
+    font-size: clamp(2rem, 1.2rem + 3vw, var(--font-3X-large));
+
+    margin: clamp(var(--space-large), 4vw, var(--space-2X-large));
+    margin-top: clamp(var(--space-X-large), 6vw, var(--space-3X-large));
+}
+
+/* intro */
+#intro .intro-image {
+    width: clamp(10rem, 45vw, calc(var(--width-mid) * 1.2));
+}
+#intro .greating {
+    font-size: clamp(1.1rem, 0.8rem + 1.2vw, var(--font-large));
+}
+#intro h1 {
+    font-size: clamp(2.2rem, 1rem + 5vw, var(--font-4X-large));
+}
+#intro .cs {
+    font-size: clamp(2.4rem, 1rem + 5.5vw, var(--font-5X-large));
+}
+#intro .info {
+    font-size: clamp(1rem, 0.8rem + 1vw, calc(var(--font-large) * 0.9));
+}
+
+/* about me */
+#aboutMe .aboutMe-image {
+    width: clamp(10rem, 45vw, calc(var(--width-mid) * 1.2));
+}
+#aboutMe .p {
+    font-size: clamp(1rem, 0.85rem + 0.6vw, var(--font-mid));
+}
+
+/* my works */
+#myWorks .works {
+    font-size: clamp(1.3rem, 0.8rem + 3vw, var(--font-2X-large));
+}
+
+.card {
+    margin: clamp(var(--space-small), 3.2vw, calc(var(--space-2X-large) * 0.8));
+    padding: clamp(var(--space-mid), 2vw, var(--space-large));
+}
+.card .image {
+    height: clamp(220px, 60vw, var(--height-mid));
+    max-width: min(500px, 70vw);
+}
+.card .card-name {
+    font-size: clamp(1.3rem, 0.8rem + 2vw, calc(var(--font-2X-large) * 0.8));
+}
+.card .details {
+    max-width: min(var(--width-large), 65vw);
+}
+.card .categories {
+    flex-wrap: wrap;
+}
+
+.carousel {
+    padding-inline: clamp(var(--space-mid), 5vw, var(--space-2X-large));
+}
+.arrow {
+    width: clamp(2.25rem, 9vw, var(--width-small));
+    height: clamp(2.25rem, 9vw, var(--width-small));
+}
+
+/* contact */
+.contact-icons img {
+    width: clamp(3.5rem, 14vw, calc(var(--width-small) * 1.5));
+
+    margin-inline-start: clamp(var(--space-mid), 5vw, var(--space-2X-large));
+    margin-inline-end: clamp(var(--space-mid), 5vw, var(--space-2X-large));
+}
+.contact-icons img.unselected:hover {
+    width: clamp(3.6rem, 14.5vw, calc(var(--width-small) * 1.55));
+}
+
+/* footer */
+#footbar {
+    font-size: clamp(0.8rem, 0.6rem + 1.2vw, var(--font-mid));
+}
+
+/* popup */
+.inner-popup .Ptitle {
+    font-size: clamp(2rem, 1rem + 6vw, var(--font-4X-large));
+}
+.bt {
+    font-size: clamp(1.1rem, 0.8rem + 2vw, 1.9rem);
+    width: clamp(100px, 25vw, 144px);
+}
+
+/* ////////////////////////////////////// */
+
+/* ! Part 2 : media queries */
+
+/* ! Tablets & smaller (<= 900px) */
+
+@media (max-width: 900px) {
+
+    /* body is "fit-content" (global.css) : the carousel cards made it
+       wider than the screen, so limit it to the screen width */
+    body {
+        max-width: 100%;
+    }
+
+    /* navbar : logo on the left, ☰ on the right */
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .menu-button {
+        display: grid;
+        place-items: center;
+
+        color: var(--color-text);
+        background: none;
+        border: none;
+
+        margin-inline-end: var(--space-large);
+        padding: 0;
+
+        position: relative;
+        z-index: 2; /* above the side menu, to close it */
+
+        cursor: pointer;
+    }
+    .menu-button .material-symbols-outlined {
+        font-size: var(--font-X-large);
+    }
+
+    /* the side menu */
+    .side-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-X-large);
+
+        position: fixed;
+        top: 0;
+        inset-inline-end: 0;
+        z-index: 1;
+
+        height: 100dvh;
+        width: min(70vw, 280px);
+        box-sizing: border-box;
+        padding: calc(var(--font-3X-large) * 1.1 + var(--space-large)) var(--space-large) var(--space-large);
+
+        background-color: var(--color-navbar);
+        border-inline-start: var(--border-X-small) solid var(--color-border-blue);
+        box-shadow: var(--shadow-mid-blur) var(--color-shadow-darkBlue);
+
+        /* hidden outside the screen */
+        transform: translateX(100%);
+        visibility: hidden;
+        transition:
+            transform var(--transtion-mid) ease-in-out,
+            visibility var(--transtion-mid);
+    }
+    html[dir="rtl"] .side-menu {
+        transform: translateX(-100%); /* in arabic it comes from the left */
+    }
+    .navbar .side-menu.open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .side-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-X-large);
+
+        font-size: var(--font-large);
+
+        margin: 0;
+        padding: 0;
+    }
+    .side-menu ul li a:hover {
+        font-size: var(--font-X-large);
+    }
+    .side-menu .material-symbols-outlined {
+        font-size: var(--font-X-large);
+    }
+
+    /* lang button : top-left of the side menu, same row as the ✕ */
+    .side-menu #lang {
+        position: absolute;
+        inset-inline-start: var(--space-large);
+
+        /* center it vertically inside the navbar height :
+           (navbar height - lang height) / 2
+           lang height = its height + padding (top & bottom) + border (top & bottom) */
+        top: calc(
+            (var(--font-3X-large) * 1.1
+            - var(--font-X-large) * 1.1
+            - var(--space-X-small) * 2
+            - var(--border-X-small) * 2) / 2
+        );
+
+        margin: 0;
+        margin-top: 8px;
+
+        width: var(--font-large);
+        height: var(--font-large);
+    }
+    .side-menu #lang button {
+        font-size: var(--font-mid);
+
+        align-self: center;
+
+        width: var(--font-large);
+        height: var(--font-large);
+    }
+
+    /* the lang animation moves the <header> with "transform", and that
+       breaks "position: fixed" of the side menu while it plays */
+    .lang-switch-ar header,
+    .lang-switch-en header {
+        animation: none;
+    }
+
+    /* intro : image on top, text under it */
+    #intro {
+        flex-direction: column;
+        text-align: center;
+
+        padding-bottom: var(--space-X-large);
+    }
+    #intro .intro-image {
+        margin: var(--space-2X-large) auto var(--space-mid);
+    }
+    #intro h1 {
+        margin: var(--space-mid);
+    }
+    html[dir="ltr"] #intro .cs {
+        margin-inline-start: 0;
+    }
+    html[dir="ltr"] #intro .student {
+        margin-left: var(--space-mid);
+    }
+    html[dir="rtl"] #intro .cs {
+        margin-inline-end: var(--space-mid);
+    }
+    #intro .info {
+        margin-inline: var(--space-large);
+    }
+
+    /* about me : image on top, text under it */
+    #aboutMe .content {
+        flex-direction: column;
+        align-items: center;
+
+        min-height: auto;
+    }
+    #aboutMe .aboutMe-image {
+        margin-inline: 0;
+        margin-bottom: var(--space-X-large);
+    }
+    #aboutMe .p {
+        margin-inline: var(--space-large);
+    }
+
+    /* my works tabs : equal space between the words */
+    #myWorks .works {
+        justify-content: space-evenly;
+    }
+    #myWorks .works li {
+        flex: 0 1 auto;
+    }
+}
+
+/* ! Phones (<= 600px) */
+
+@media (max-width: 600px) {
+
+    /* thinner strokes & borders so the small texts stay readable */
+    :root {
+        --border-large: 6px;
+    }
+
+    /* carousel : fit the screen (padding inside the width) */
+    .carousel {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    /* footer : let the text wrap */
+    #footbar {
+        height: auto;
+        padding: var(--space-mid);
+    }
+
+    /* popup */
+    .inner-popup {
+        box-sizing: border-box;
+        width: min(90vw, var(--height-large));
+        min-width: 0;
+
+        padding: var(--space-mid);
+    }
+    .inner-popup .Ptitle,
+    .message {
+        margin-top: var(--space-mid);
+        margin-bottom: var(--space-large);
+    }
+    .bt {
+        margin-block: var(--space-X-small);
+    }
+}

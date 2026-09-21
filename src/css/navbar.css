@@ -93,7 +93,7 @@
     cursor: pointer;
 }
 #lang button {
-    font-size: var(--font-small);
+    font-size: var(--font-mid);
     color: var(--color-text);
 
     background: none;
@@ -119,4 +119,12 @@
 /* home logo */
 .navbar .material-symbols-outlined {
     vertical-align: middle;
+}
+
+/* ! side menu (only on small screens, see Responsive.css) */
+.side-menu {
+    display: contents; /* the div "disappears" : ul & #lang stay direct items of the navbar */
+}
+.menu-button {
+    display: none;
 }

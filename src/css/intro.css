@@ -10,7 +10,7 @@
     position: absolute;
     inset: 0;
 
-    background-image: url("/assets/images/Coding theme 1.webp");
+    background-image: url("../../assets/images/Coding theme 1.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

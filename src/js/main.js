@@ -4,6 +4,7 @@ import {carousel} from "./cards_scrolling.js";
 import {myWorks} from "./my_works.js";
 import {sectionsAnimation} from "./Animation.js";
 import { initLanguage } from "./i18n/i18n.js";
+import {sideMenu} from "./side_menu.js";
 
 
 // ////////////////////////////////////////
@@ -25,3 +26,6 @@ myWorks();
 
 // ! Animation 
 sectionsAnimation();
+
+// ! side menu (small screens)
+sideMenu();

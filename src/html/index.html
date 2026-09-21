@@ -30,19 +30,28 @@
             <div class="logo" dir="ltr">
                 RE<img src="../../assets/icons/logo.png" alt="Logo">DA
             </div>
-            <ul>
-                <li><a href="index.html">
-                    <span class="material-symbols-outlined">home</span>
-                    <span data-i18n="nav.home">Home</span>
-                </a></li>
-                <li><a href="#aboutMe" data-i18n="nav.about">About Me</a></li>
-                <li><a href="#myWorks" data-i18n="nav.works">My Works</a></li>
-                <li><a href="#contactMe" data-i18n="nav.contact">Cantact Me</a></li>
-            </ul>
+            
+            <div id="sideMenu" class="side-menu">
+                <ul>
+                    <li><a href="index.html">
+                        <span class="material-symbols-outlined">home</span>
+                        <span data-i18n="nav.home">Home</span>
+                    </a></li>
+                    <li><a href="#aboutMe" data-i18n="nav.about">About Me</a></li>
+                    <li><a href="#myWorks" data-i18n="nav.works">My Works</a></li>
+                    <li><a href="#contactMe" data-i18n="nav.contact">Cantact Me</a></li>
+                </ul>
 
-            <div id="lang">
-                <button id="langButton">EN</button>
+                <div id="lang">
+                    <button id="langButton">EN</button>
+                </div>
             </div>
+
+            <button id="menuButton" class="menu-button" type="button"
+                    aria-label="Menu" aria-expanded="false" aria-controls="sideMenu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            
         </nav>
 
     </header>
