@@ -2,7 +2,11 @@
     text-decoration: none;
 }
 .contact-icons {
-    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
 
     margin-top: var(--space-3X-large);
     margin-bottom: var(--space-3X-large);
